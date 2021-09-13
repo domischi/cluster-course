@@ -8,7 +8,7 @@ def run_one(config_updates):
 # This if __name__ thing is necessary, because dask needs to make sure only the master node calls this code.
 if __name__ == '__main__':
     lazy_results = [] # Define a list to hold all our simulations
-    gammas = [0.2, 0.5, 1., 2, .5] # Where do we want to iterate over?
+    gammas = [0.2, 0.5, 1., 2, 5] # Where do we want to iterate over?
     client = dask.distributed.Client(threads_per_worker = 1, n_workers = len(gammas)) # Define a "cluster" locally, where each simulation gets 1 (logical) core, but we spawn len(gammas) of them
     for gamma in gammas:
         config_updates = {'gamma':gamma}
