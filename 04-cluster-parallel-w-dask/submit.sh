@@ -7,6 +7,7 @@
 #SBATCH --output=out                     # In what file to store the output?
 #SBATCH --error=out                      # And where to store the error messages (here we pipe them in the same file for simplicity)
 #======START===============================
+source ~/.bashrc
 echo "The current job ID is $SLURM_JOB_ID"
 echo "Running on $SLURM_JOB_NUM_NODES nodes: $SLURM_JOB_NODELIST"
 echo "A total of $SLURM_NTASKS tasks is used"
