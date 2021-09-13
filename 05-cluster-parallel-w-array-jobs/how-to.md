@@ -5,8 +5,8 @@
     1. Login to the cluster
         `ssh <your-user-name>@<cluster-name>`
     2. If you followed along you should have the scratch directory already
-    3. Copy all simulation data to scratch and change directory there
-        `cp -r 05-cluster-parallel-w-array-jobs scratch/; cd scratch/05-cluster-parallel-w-array-jobs` 
+    3. Move all simulation data to scratch and change directory there
+        `mv 05-cluster-parallel-w-array-jobs scratch/; cd scratch/05-cluster-parallel-w-array-jobs` 
     4. `simulation_logic.py` and `run_one.py` are unchanged. The `run_many.py` now just looks which job it should do, and ignores all others. The logic becomes considerably simpler and you never waste CPU time.
     5. `submit-array.sh` still needs to be adapted:
         - Here, ntasks is 1, as every instance only gets one core to work with
