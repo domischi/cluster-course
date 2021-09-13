@@ -21,7 +21,7 @@ def do_one_parameter_config(m, gamma, k, t_min=0., t_max=25., y0=1., dydt0=0., S
     plt.ylabel(r'$x$', fontsize=14)
     plt.title(f'$m={m:.2e},~\gamma={gamma:.2e},~k={k:.2e}$')
     if SAVE:
-        fname = f'{DATA_DIR}/very-important-figure-{m=:.2f}_{gamma=:.2f}_{k=:.2f}.png'
+        fname = f'{DATA_DIR}/very-important-figure.png'
         plt.savefig(fname)
         if ex is not None:
             ex.add_artifact(fname)

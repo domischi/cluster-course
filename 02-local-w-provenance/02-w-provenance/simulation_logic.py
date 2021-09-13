@@ -7,7 +7,6 @@ import os
 DATA_DIR = '/tmp/work_dir'
 os.makedirs(DATA_DIR, exist_ok=True)
 
-# Let's define the right-hand side of the equation
 def RHS(t, y, m, gamma, k):
     return np.array([y[1], -(gamma*y[1]+k*y[0])/m])
 
@@ -21,7 +20,7 @@ def do_one_parameter_config(m, gamma, k, t_min=0., t_max=25., y0=1., dydt0=0., S
     plt.ylabel(r'$x$', fontsize=14)
     plt.title(f'$m={m:.2e},~\gamma={gamma:.2e},~k={k:.2e}$')
     if SAVE:
-        fname = f'{DATA_DIR}/very-important-figure-{m=:.2f}_{gamma=:.2f}_{k=:.2f}.png'
+        fname = f'{DATA_DIR}/very-important-figure.png' ## Important: We no longer need to handle file names ourself
         plt.savefig(fname)
         if ex is not None:
             ex.add_artifact(fname)
