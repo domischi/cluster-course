@@ -5,8 +5,8 @@
 #SBATCH --time=00:02:00                  # Time can also be more than 24 hours by using a format like days-hours:minutes:seconds. Note that there's a maximal time limit and you will not get scheduled if it's too long
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<your-mail-address>  # Where do you want to get your mails to?
-#SBATCH --output=out                     # In what file to store the output?
-#SBATCH --error=out                      # And where to store the error messages (here we pipe them in the same file for simplicity)
+#SBATCH --output=out-%a.txt              # In what file to store the output?
+#SBATCH --error=out-%a.txt               # And where to store the error messages (here we pipe them in the same file for simplicity)
 #======START===============================
 source ~/.bashrc
 echo "The current job ID is $SLURM_JOB_ID"
