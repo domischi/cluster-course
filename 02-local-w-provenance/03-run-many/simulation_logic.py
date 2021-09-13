@@ -3,15 +3,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-## Important: Work on a temporary directory, as you now handle storage over the provenance system
 DATA_DIR = '/tmp/work_dir'
 os.makedirs(DATA_DIR, exist_ok=True)
 
-# Let's define the right-hand side of the equation
 def RHS(t, y, m, gamma, k):
     return np.array([y[1], -(gamma*y[1]+k*y[0])/m])
 
-## Important: pass the sacred experiment as a parameter
 def do_one_parameter_config(m, gamma, k, t_min=0., t_max=25., y0=1., dydt0=0., SAVE=False, ex=None):
     T = np.linspace(t_min, t_max, 101)
     sol=solve_ivp(RHS, t_span=(t_min, t_max), y0=(y0,dydt0), args=(m, gamma, k), t_eval=T)

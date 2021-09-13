@@ -1,5 +1,5 @@
-from run_one import ex ## We import the experiment here. It knows which command to run, and where to store stuff
+from run_one import ex # We import the experiment here. It knows what are the default values, how to run the code, and where to store it's results
 
-for gamma in [0.2, 0.5, 1., 2, .5]:
-    config_updates = {'gamma':gamma}
-    ex.run(config_updates=config_updates)
+for gamma in [0.2, 0.5, 1., 2, .5]: # Over what parameters do we loop
+    config_updates = {'gamma':gamma} # Update the default variables (all others are still the same)
+    ex.run(config_updates=config_updates) # Run with the updated parameters
