@@ -6,7 +6,6 @@ from uuid import uuid4
 
 ## Important: because now multiple programs access possibly the same memory, make sure each and every one of them operates in a seperate folder
 uid = str(uuid4())
-print(f'{uid=}') ## For debugging purpose
 DATA_DIR = f'/tmp/{uid}'
 os.makedirs(DATA_DIR, exist_ok=True)
 
