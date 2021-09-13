@@ -3,4 +3,4 @@ Now we want to make it parallel, first only locally
 2. Change automain to main in `run_one.py`. Otherwise, it can lead to problems as we now need to define our own `__main__`.
 3. Run the `run_many.py` that initializes a dask task list and then executes it by calling
 
-    `python run_many.py`
+       python run_many.py
