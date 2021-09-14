@@ -2,6 +2,7 @@ from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import json  ## Using this for the data dump
 
 ## Important: Work on a temporary directory, as you now handle storage over the provenance system
 DATA_DIR = "/tmp/work_dir"
@@ -27,7 +28,16 @@ def do_one_parameter_config(m, gamma, k, t_min=0.0, t_max=25.0, y0=1.0, dydt0=0.
         fname = f"{DATA_DIR}/very-important-figure.png"  ## Important: We no longer need to handle file names ourself
         plt.savefig(fname)
         if ex is not None:
-            ex.add_artifact(fname)
+            ex.add_artifact(fname)  ## Save figure
+            data_dump_fname = f"{DATA_DIR}/solution.json"
+            data_dump_dict = {
+                "t": T.tolist(),
+                "x": sol["y"][0].tolist(),
+                "dxdt": sol["y"][1].tolist(),
+            }
+            with open(data_dump_fname, "w") as f:
+                json.dump(data_dump_dict, f, indent=4)
+            ex.add_artifact(data_dump_fname)
         plt.close()
     else:
         plt.show()

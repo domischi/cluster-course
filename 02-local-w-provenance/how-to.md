@@ -10,6 +10,7 @@
         - Change to a temporary work dir. You don't want your code to write directly to the results folder, but let this be handled by the provenance solution.
         - To your simulation code, handle the data provenance by passing `ex` as an optional parameter. Then in the code, make sure to store the artifacts such as plots (or raw data files) using `ex.add_artifact`
         - You no longer need to make sure all filenames are unique. This is now handled by the provenance system. Hence, we can name our figure still 'very-important-figure.png' for every run.
+        - We additionally want to store a data dump. Here we use json for this purpose. Using this information can help with a post-doc analysis, especially if referees are interested in some additional data analysis, storing additional information can be helpful.
     - `run_one.py` contains the logic to run a single simulation. Detailed comments in the file on how this needs to be written. To run the example, execute
 
           python run_one.py

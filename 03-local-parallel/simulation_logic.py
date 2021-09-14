@@ -2,7 +2,8 @@ from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-from uuid import uuid4
+import json
+from uuid import uuid4 ## Required for unique identifiers
 
 ## Important: because now multiple programs access possibly the same memory, make sure each and every one of them operates in a seperate folder
 uid = str(uuid4())
@@ -29,6 +30,15 @@ def do_one_parameter_config(m, gamma, k, t_min=0.0, t_max=25.0, y0=1.0, dydt0=0.
         plt.savefig(fname)
         if ex is not None:
             ex.add_artifact(fname)
+            data_dump_fname = f"{DATA_DIR}/solution.json"
+            data_dump_dict = {
+                "t": T.tolist(),
+                "x": sol["y"][0].tolist(),
+                "dxdt": sol["y"][1].tolist(),
+            }
+            with open(data_dump_fname, "w") as f:
+                json.dump(data_dump_dict, f, indent=4)
+            ex.add_artifact(data_dump_fname)
         plt.close()
     else:
         plt.show()
