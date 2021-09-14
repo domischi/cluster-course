@@ -11,5 +11,6 @@ For this course, the curriculum is as follows:
 - In 03 we parallelize our application locally.
 - In 04 we port the application to the cluster using the same software stack as used locally.
 - In 05 we port the application using the array-job capability of slurm for the simplest parallelization on the cluster.
+- In 06 we discuss some general considerations when we make certain design choices (opinion piece, see disclaimer there)
 
 The expectation is that after going through this course, you have the knowledge and some templates to run your own code on the cluster, and that you know which paramters affect what behavior on the cluster.
