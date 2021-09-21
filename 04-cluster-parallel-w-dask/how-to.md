@@ -17,7 +17,7 @@
 
     3. Make your scratch folder (fast memory, make sure all simulations run there, src can be located somewhere else but for simplicity, we just move everything there)
 
-           mkdir /scratch/<your-user-name>; ln -s /scratch/<your-user-name> ~/scratch;
+           mkdir /central/scratch/<your-user-name>; ln -s /central/scratch/<your-user-name> ~/scratch;
 
     4. Move all simulation data to scratch and change directory there
 
