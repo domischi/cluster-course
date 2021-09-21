@@ -4,7 +4,7 @@ import dask.distributed
 
 
 def run_one(config_updates):
-    from run_one import ex  ## This will be executed on each compute instance, hence needs to be imported within the function
+    from run_one import ex
     ex.run(config_updates=config_updates)
 
 

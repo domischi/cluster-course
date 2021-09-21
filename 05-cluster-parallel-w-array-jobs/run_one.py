@@ -17,7 +17,7 @@ def cfg():
     dydt0 = 0.0
 
 
-@ex.main  ## Important: Here we removed the auto from automain -> it's not automagically called
+@ex.main
 def run_one_simulation(_config, _run):
     do_one_parameter_config(
         m=_config["m"],
