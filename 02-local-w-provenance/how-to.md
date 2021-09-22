@@ -18,6 +18,6 @@
 - 03: Let's do parameter sweeps fully provenanced
     - `simulation_logic.py` requires no change because we separated the run logic from the simulation logic
     - `run_one.py` requires no change but is no longer the exectued file.
-    - Now the logic to execute the parameter swee is in `run_many.py`. (Detailed comments in the file) To execute this example run
+    - Now the logic to execute the parameter sweep is in `run_many.py`. (Detailed comments in the file) To execute this example run
 
           python run_many.py
